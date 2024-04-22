@@ -1,38 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  background-color: rgb(235, 233, 221);
+  padding: 0;
+  margin: 0;
+  font-family: Futura, sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  transition: 2s ease;
+}
+
 .App {
-  text-align: center;
+  margin: 0;
+  padding: 24px 32px;
+  color: #000000;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2 {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.projects {
+  /* border-bottom: 0.5px solid black; */
+  padding-bottom: 50px;
+}
+
+.project {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #111111;
+  font-size: 3rem;
+  display: inline-block;
+  transition: 3s ease;
+}
+
+.project:hover {
+  color: #525252;
+  filter: blur(10px);
+  transition: 1s ease;
+  cursor: none
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 12px;
+}
+
+.title {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+  /* border-bottom: 0.5px solid black; */
+}
+
+.infoText {
+  width: 75vw;
+  font-size: 2rem;
+  color: #bf3939;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.contact {
+  position: fixed;
+  /* display: flex; */
+  /* width: 95%; */
+  /* justify-content: space-around; */
+  bottom: 24px;
+  /* border-top: 0.5px solid black; */
+  left: 24 px;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #111111;
+  font-weight: 700;
+  display: block;
+  font-size: 1rem;
+  padding-top: 12px;
+  transition: 2s ease;
+}
+
+.contact a:hover {
+  filter: blur(2px);
+  transition: 1s ease;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 1rem;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .project {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .infoText {
+    width: 60vw;
+    font-size: 1rem;
   }
+
+  /* .contact a {
+    font-weight: 700;
+    display: block;
+    font-size: 1rem;
+  } */
 }
+
+/* .cursor {
+  background-color: #111111;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+} */
