@@ -53,7 +53,7 @@ p {
   margin-bottom: 50px;
   padding-bottom: 50px;
   width: 100%;
-  /* border-bottom: 0.5px solid black; */
+  border-bottom: 0.5px solid black;
 }
 
 .infoText {
@@ -67,18 +67,19 @@ p {
 
 .contact {
   position: fixed;
-  /* display: flex; */
-  /* width: 95%; */
-  /* justify-content: space-around; */
+  display: flex;
+  width: 95%;
+  justify-content: space-around;
   bottom: 24px;
-  /* border-top: 0.5px solid black; */
-  left: 24 px;
+  padding-top: 12px;
+  border-top: 0.5px solid black;
+  /* left: 24; */
 }
 
 .contact a {
   text-decoration: none;
   color: #111111;
-  font-weight: 700;
+  font-weight: 500;
   display: block;
   font-size: 1rem;
   padding-top: 12px;

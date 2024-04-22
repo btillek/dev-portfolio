@@ -113,9 +113,9 @@ console.log(mousePos);
       </div>
 
       <div className="contact">
-        <a href="https://github.com/btillek">Github</a>
-        <a href="https://linkedin.com/in/boytillekens">Linkedin</a>
-        <a href="mailto:boytillekens@gmail.com">Contact</a>
+        <a href="https://github.com/btillek" target="_blank" rel="noreferrer">Github</a>
+        <a href="https://linkedin.com/in/boytillekens" target="_blank" rel="noreferrer">Linkedin</a>
+        <a href="mailto:boytillekens@gmail.com" target="_blank" rel="noreferrer">Contact</a>
       </div>
 
       {/* <motion.div
