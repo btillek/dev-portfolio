@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Marquee from 'react-fast-marquee'
-import ChessImg from './imgs/chess-nexus.gif'
+// import ChessImg from './imgs/chess-nexus.gif'
 import './App.css';
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     const mouseMove = (e) => {
       setMousePos({
-        x: e.clientX + 10,
+        x: e.clientX + 20,
         y: e.clientY + 20
       })
 
