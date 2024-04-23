@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-// import { motion } from 'framer-motion'
+import Marquee from 'react-fast-marquee'
 import './App.css';
 
 function App() {
@@ -7,8 +7,6 @@ function App() {
   const [showChess, setShowChess] = useState("none");
   const [showBT, setShowBT] = useState("none");
   const [showP5, setShowP5] = useState("none");
-
-
 
   const [mousePos, setMousePos] = useState({
     x: 0,
@@ -43,51 +41,55 @@ function App() {
 
   }, []);
 
-console.log(mousePos);
-  // const variants = {
-  //   default: {
-  //     x: mousePos.x,
-  //     y: mousePos.y,
-  //     display: showChess
-  //   }
-  // }
-
   return (
     <div className="App">
-      <h1 className="title">Boy Tillekens is a web developer based in The Netherlands</h1>
+      <div className="header">
+        <Marquee>
+            <h1 className="title">→ Boy Tillekens is a web developer based in The Netherlands</h1>
+            <h1 className="title">→ Boy Tillekens is a web developer based in The Netherlands</h1>
+            <h1 className="title">→ Boy Tillekens is a web developer based in The Netherlands</h1>
+        </Marquee>
+      </div>
 
-      <div className="projects">
-        <p>Selected projects</p>
+      <div className="main">
+        <div className="projects">
+          <p>Selected projects:</p>
 
-        <a className="project"
-          href="https://chess-bro-6b451ee7b4b4.herokuapp.com/"
-          target="_blank"
-          rel="noreferrer"
-          onMouseEnter={(e) => setShowChess("block")}
-          onMouseLeave={(e) => setShowChess("none")}
-          >
-            Chess Nexus
-        </a><br />
+          <a className="project"
+            href="https://chess-bro-6b451ee7b4b4.herokuapp.com/"
+            target="_blank"
+            rel="noreferrer"
+            onMouseEnter={(e) => setShowChess("block")}
+            onMouseLeave={(e) => setShowChess("none")}
+            >
+              Chess Nexus
+          </a><br />
 
-        <a className="project"
-          href="https://btillek.github.io/portfolio-website/"
-          target="_blank"
-          rel="noreferrer"
-          onMouseEnter={(e) => setShowBT("block")}
-          onMouseLeave={(e) => setShowBT("none")}
-          >
-            BT Studio
-        </a><br />
+          <a className="project"
+            href="https://btillek.github.io/portfolio-website/"
+            target="_blank"
+            rel="noreferrer"
+            onMouseEnter={(e) => setShowBT("block")}
+            onMouseLeave={(e) => setShowBT("none")}
+            >
+              BT Studio
+          </a><br />
 
-        <a className="project"
-          href="https://btillek.github.io/portfolio-website/"
-          target="_blank"
-          rel="noreferrer"
-          onMouseEnter={(e) => setShowP5("block")}
-          onMouseLeave={(e) => setShowP5("none")}
-          >
-            p5.js Explorations
-        </a>
+          <a className="project"
+            href="https://btillek.github.io/portfolio-website/"
+            target="_blank"
+            rel="noreferrer"
+            onMouseEnter={(e) => setShowP5("block")}
+            onMouseLeave={(e) => setShowP5("none")}
+            >
+              p5.js Explorations
+          </a>
+
+        </div>
+
+        {/* <div className="images">
+          <img src={ChessImg} alt="chess nexus" />
+        </div> */}
 
       </div>
 

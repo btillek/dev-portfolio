@@ -12,7 +12,7 @@ body {
 
 .App {
   margin: 0;
-  padding: 24px 32px;
+  /* padding: 24px 32px; */
   color: #000000;
 }
 
@@ -21,9 +21,29 @@ h1, h2 {
   padding: 0;
 }
 
+.main {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.images {
+  padding: 32px;
+  height: 100;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  border-left: 0.5px solid black;
+
+}
+
+.images img {
+  max-height: 60vh;
+}
+
 .projects {
-  /* border-bottom: 0.5px solid black; */
-  padding-bottom: 50px;
+  padding: 24px 32px;
+  width: 50%;
 }
 
 .project {
@@ -32,8 +52,9 @@ h1, h2 {
   text-decoration: none;
   color: #111111;
   font-size: 3rem;
-  display: inline-block;
+  /* display: inline-block; */
   transition: 3s ease;
+  /* border-bottom: 0.5px solid black; */
 }
 
 .project:hover {
@@ -49,11 +70,19 @@ p {
   padding-bottom: 12px;
 }
 
-.title {
-  margin-bottom: 50px;
-  padding-bottom: 50px;
+.header {
   width: 100%;
   border-bottom: 0.5px solid black;
+}
+
+.title {
+  /* margin-bottom: 50px; */
+  /* padding-bottom: 50px; */
+  /* width: 100%; */
+  padding: 24px 32px;
+  font-size: 1rem;
+  font-weight: 500;
+  /* border-bottom: 0.5px solid black; */
 }
 
 .infoText {
@@ -68,7 +97,7 @@ p {
 .contact {
   position: fixed;
   display: flex;
-  width: 95%;
+  width: 100%;
   justify-content: space-around;
   bottom: 24px;
   padding-top: 12px;
