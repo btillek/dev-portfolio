@@ -11,8 +11,11 @@ body {
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0;
-  /* padding: 24px 32px; */
+  height: 100vh;
   color: #000000;
 }
 
@@ -29,12 +32,11 @@ h1, h2 {
 
 .images {
   padding: 32px;
-  height: 100;
+  /* height: 100%; */
   display: flex;
   justify-content: end;
   align-items: center;
   border-left: 0.5px solid black;
-
 }
 
 .images img {
@@ -61,7 +63,7 @@ h1, h2 {
   color: #525252;
   filter: blur(10px);
   transition: 1s ease;
-  cursor: none
+  cursor: pointer
 }
 
 p {
@@ -86,21 +88,25 @@ p {
 }
 
 .infoText {
-  width: 75vw;
-  font-size: 2rem;
+  width: 50vw;
+  font-size: 1rem;
   color: #bf3939;
   position: fixed;
   top: 0;
   left: 0;
+  border: 5px solid #bf3939;
+  background-color: rgb(235, 233, 221);
+  padding: 10px 20px;
 }
 
 .contact {
-  position: fixed;
+  /* position: fixed;
+  bottom: 24px; */
   display: flex;
   width: 100%;
   justify-content: space-around;
-  bottom: 24px;
   padding-top: 12px;
+  padding-bottom: 24px;
   border-top: 0.5px solid black;
   /* left: 24; */
 }

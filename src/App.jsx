@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Marquee from 'react-fast-marquee'
+import ChessImg from './imgs/chess-nexus.gif'
 import './App.css';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
     const mouseMove = (e) => {
       setMousePos({
         x: e.clientX + 10,
-        y: e.clientY - 30
+        y: e.clientY + 20
       })
 
       // setBgCol({
@@ -86,8 +87,8 @@ function App() {
           </a>
 
         </div>
-
-        {/* <div className="images">
+        {/*
+        <div className="images">
           <img src={ChessImg} alt="chess nexus" />
         </div> */}
 
@@ -119,24 +120,6 @@ function App() {
         <a href="https://linkedin.com/in/boytillekens" target="_blank" rel="noreferrer">Linkedin</a>
         <a href="mailto:boytillekens@gmail.com" target="_blank" rel="noreferrer">Contact</a>
       </div>
-
-      {/* <motion.div
-        className="infoText"
-        style={showChess}
-        variants={variants}
-        animate="default"
-        >
-          Realtime multiplayer chess app, built at the Le Wagon Web Development bootcamp, 2024
-      </motion.div>
-
-      <motion.div
-        className="infoText"
-        style={showBT}
-        variants={variants}
-        animate="default"
-        >
-          Portfolio website for animation studio, 2024
-      </motion.div> */}
 
     </div>
   );
