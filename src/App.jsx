@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import Marquee from 'react-fast-marquee'
-// import ChessImg from './imgs/chess-nexus.gif'
+import ChessVid from './imgs/chess-nexus.mp4'
+import BTVid from './imgs/btstudio.mp4'
+import { motion, AnimatePresence } from 'framer-motion'
 import './App.css';
 
 function App() {
@@ -73,7 +75,7 @@ function App() {
             onMouseEnter={(e) => setShowBT("block")}
             onMouseLeave={(e) => setShowBT("none")}
             >
-              BT Studio
+              BTStudio
           </a><br />
 
           <a className="project"
@@ -87,10 +89,47 @@ function App() {
           </a>
 
         </div>
-        {/*
-        <div className="images">
-          <img src={ChessImg} alt="chess nexus" />
-        </div> */}
+
+        <AnimatePresence>
+          {showChess === "block" && (
+            <motion.div
+              className="images"
+              initial={ {x: 350} }
+              animate={ {x: 0, transition: { duration: 1, ease: [0.20, 0, 0.13, 1] }} }
+              exit={ {x: 350, transition: { duration: 1, ease: [0.20, 0, 0.13, 1] }} }
+              >
+              <video
+                controls
+                muted
+                autoplay=""
+                loop
+                src={ChessVid}
+                >
+            </video>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {showBT === "block" && (
+            <motion.div
+              className="images"
+              initial={ {x: window.innerWidth/2} }
+              animate={ {x: 0, transition: { duration: 1, ease: [0.20, 0, 0.13, 1] }} }
+              exit={ {x: window.innerWidth/2, transition: { duration: 1, ease: [0.20, 0, 0.13, 1] }} }
+              >
+              <video
+                style={{width: "40vw"}}
+                controls
+                muted
+                autoplay=""
+                loop
+                src={BTVid}
+                >
+            </video>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
       </div>
 
@@ -105,14 +144,14 @@ function App() {
         className="infoText"
         style={{left: mousePos.x, top: mousePos.y, display: showBT}}
         >
-          <h2>→ Portfolio website showcasing the animated works of BT Studio<em>, 2024</em></h2>
+          <h2>→ Portfolio website for animation studio<em>, 2024</em></h2>
       </div>
 
       <div
         className="infoText"
         style={{left: mousePos.x, top: mousePos.y, display: showP5}}
         >
-          <h2>→ A page showing images created using p5.js<em>, 2024</em></h2>
+          <h2>→ Showcasing images created using p5.js<em>, 2024</em></h2>
       </div>
 
       <div className="contact">
