@@ -79,7 +79,7 @@ function App() {
           </a><br />
 
           <a className="project"
-            href="https://btillek.github.io/portfolio-website/"
+            href="https://btillek.github.io/p5js-explorations/"
             target="_blank"
             rel="noreferrer"
             onMouseEnter={(e) => setShowP5("block")}
