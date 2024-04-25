@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/dev-portfolio/static/css/main.2610b3b5.css",
-    "main.js": "/dev-portfolio/static/js/main.2dbfe4e6.js",
-    "static/media/btstudio.mp4": "/dev-portfolio/static/media/btstudio.1a46aa0bb454fd8eb744.mp4",
-    "static/media/chess-nexus.mp4": "/dev-portfolio/static/media/chess-nexus.47ad224506ec7591c4bd.mp4",
-    "index.html": "/dev-portfolio/index.html",
-    "main.2610b3b5.css.map": "/dev-portfolio/static/css/main.2610b3b5.css.map",
-    "main.2dbfe4e6.js.map": "/dev-portfolio/static/js/main.2dbfe4e6.js.map"
+    "main.css": "/static/css/main.2610b3b5.css",
+    "main.js": "/static/js/main.f963cd86.js",
+    "static/media/btstudio.mp4": "/static/media/btstudio.1a46aa0bb454fd8eb744.mp4",
+    "static/media/chess-nexus.mp4": "/static/media/chess-nexus.47ad224506ec7591c4bd.mp4",
+    "index.html": "/index.html",
+    "main.2610b3b5.css.map": "/static/css/main.2610b3b5.css.map",
+    "main.f963cd86.js.map": "/static/js/main.f963cd86.js.map"
   },
   "entrypoints": [
     "static/css/main.2610b3b5.css",
-    "static/js/main.2dbfe4e6.js"
+    "static/js/main.f963cd86.js"
   ]
 }
