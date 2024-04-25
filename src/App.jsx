@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Marquee from 'react-fast-marquee'
 import ChessVid from './imgs/chess-nexus.mp4'
 import BTVid from './imgs/btstudio.mp4'
+import p5jsVid from './imgs/p5js.mp4'
 import { motion, AnimatePresence } from 'framer-motion'
 import './App.css';
 
@@ -9,7 +10,7 @@ function App() {
 
   const [showChess, setShowChess] = useState("none");
   const [showBT, setShowBT] = useState("none");
-  const [showP5, setShowP5] = useState("none");
+  const [showP5js, setShowP5js] = useState("none");
 
   const [mousePos, setMousePos] = useState({
     x: 0,
@@ -82,8 +83,8 @@ function App() {
             href="https://btillek.github.io/p5js-explorations/"
             target="_blank"
             rel="noreferrer"
-            onMouseEnter={(e) => setShowP5("block")}
-            onMouseLeave={(e) => setShowP5("none")}
+            onMouseEnter={(e) => setShowP5js("block")}
+            onMouseLeave={(e) => setShowP5js("none")}
             >
               p5.js Explorations
           </a>
@@ -131,6 +132,27 @@ function App() {
           )}
         </AnimatePresence>
 
+        <AnimatePresence>
+          {showP5js === "block" && (
+            <motion.div
+              className="images"
+              initial={ {x: window.innerWidth/2} }
+              animate={ {x: 0, transition: { duration: 1, ease: [0.20, 0, 0.13, 1] }} }
+              exit={ {x: window.innerWidth/2, transition: { duration: 1, ease: [0.20, 0, 0.13, 1] }} }
+              >
+              <video
+                style={{width: "40vw"}}
+                controls
+                muted
+                autoplay=""
+                loop
+                src={p5jsVid}
+                >
+            </video>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
       </div>
 
       <div
@@ -149,7 +171,7 @@ function App() {
 
       <div
         className="infoText"
-        style={{left: mousePos.x, top: mousePos.y, display: showP5}}
+        style={{left: mousePos.x, top: mousePos.y, display: showP5js}}
         >
           <h2>→ Showcasing images created using p5.js<em>, 2024</em></h2>
       </div>
