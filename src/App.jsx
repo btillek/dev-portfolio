@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import Marquee from 'react-fast-marquee'
 import ChessVid from './imgs/chess-nexus.mp4'
+import ChessVid1 from './imgs/chess1.mp4'
+import ChessVid2 from './imgs/chess2.mp4'
 import BTVid from './imgs/btstudio.mp4'
 import p5jsVid from './imgs/p5js.mp4'
-import { motion, AnimatePresence } from 'framer-motion'
 import './App.css';
 
 function App() {
@@ -17,32 +19,17 @@ function App() {
     y: 0
   })
 
-  // const [bgCol, setBgCol] = useState({
-  //   r: 235,
-  //   g: 233,
-  //   b: 221
-  // })
-
   useEffect(() => {
     const mouseMove = (e) => {
       setMousePos({
-        x: e.clientX + 20,
-        y: e.clientY + 20
+        x: e.clientX + 10,
+        y: e.clientY + 10
       })
-
-      // setBgCol({
-      //   r: e.clientX,
-      //   g: e.clientY,
-      //   b: e.clientX + e.clientY,
-      // })
     }
-
     window.addEventListener("mousemove", mouseMove);
-
     return () => {
       window.removeEventListener("mousemove", mouseMove);
     }
-
   }, []);
 
   return (
@@ -87,32 +74,49 @@ function App() {
             onMouseLeave={(e) => setShowP5js("none")}
             >
               p5.js Explorations
-          </a>
+          </a><br />
 
         </div>
 
         <AnimatePresence>
-          {showChess === "block" && (
+          {showChess === "block" && window.innerWidth > 1024 && (
             <motion.div
               className="images"
-              initial={ {x: 350} }
+              initial={ {x: window.innerWidth/2} }
               animate={ {x: 0, transition: { duration: 1, ease: [0.20, 0, 0.13, 1] }} }
-              exit={ {x: 350, transition: { duration: 1, ease: [0.20, 0, 0.13, 1] }} }
+              exit={ {x: window.innerWidth/2, transition: { duration: 1, ease: [0.20, 0, 0.13, 1] }} }
               >
+              <div className="chess-vids">
+                <video
+                  muted
+                  autoplay=""
+                  loop
+                  src={ChessVid1}
+                  >
+              </video>
               <video
-                controls
-                muted
-                autoplay=""
-                loop
-                src={ChessVid}
-                >
-            </video>
+                  muted
+                  autoplay=""
+                  loop
+                  src={ChessVid2}
+                  >
+              </video>
+            </div>
+            <motion.div
+              className="project-info"
+              initial={ {y: window.innerHeight/2} }
+              animate={ {y: 0, transition: { delay: 0.2, duration: 1, ease: [0.20, 0, 0.13, 1] }} }
+              exit={ {y: window.innerHeight/2, transition: { duration: 0.5, ease: [0.20, 0, 0.13, 1] }} }
+              >
+              Multiplayer chess app developed at the Le Wagon web development bootcamp. Utilizing websockets to create a matchmaking system that allows for realtime 1v1 multiplayer matches, live chat, and user authentication.
+              <br /><br /><em>In collaboration with Andrea Basili, 2024</em>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
 
         <AnimatePresence>
-          {showBT === "block" && (
+          {showBT === "block" && window.innerWidth > 1024 && (
             <motion.div
               className="images"
               initial={ {x: window.innerWidth/2} }
@@ -121,34 +125,51 @@ function App() {
               >
               <video
                 style={{width: "40vw"}}
-                controls
                 muted
                 autoplay=""
                 loop
                 src={BTVid}
                 >
             </video>
+            <motion.div
+                className="project-info"
+                initial={ {y: window.innerHeight/2} }
+                animate={ {y: 0, transition: { delay: 0.2, duration: 1, ease: [0.20, 0, 0.13, 1] }} }
+                exit={ {y: window.innerHeight/2, transition: { duration: 0.5, ease: [0.20, 0, 0.13, 1] }} }
+                >
+                  A portfolio website for animation studio BTStudio, using moving layers to create visual depth, much like the work BTStudio creates.
+                  <br /><br /><em>2024</em>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
 
         <AnimatePresence>
-          {showP5js === "block" && (
+          {showP5js === "block" && window.innerWidth > 1024 && (
+
             <motion.div
               className="images"
               initial={ {x: window.innerWidth/2} }
               animate={ {x: 0, transition: { duration: 1, ease: [0.20, 0, 0.13, 1] }} }
-              exit={ {x: window.innerWidth/2, transition: { duration: 1, ease: [0.20, 0, 0.13, 1] }} }
+              exit={ {x: window.innerWidth/2, transition: { delay: 0.3, duration: 0.5, ease: [0.20, 0, 0.13, 1] }} }
               >
               <video
                 style={{width: "40vw"}}
-                controls
                 muted
                 autoplay=""
                 loop
                 src={p5jsVid}
                 >
-            </video>
+              </video>
+              <motion.div
+                className="project-info"
+                initial={ {y: window.innerHeight/2} }
+                animate={ {y: 0, transition: { delay: 0.2, duration: 1, ease: [0.20, 0, 0.13, 1] }} }
+                exit={ {y: window.innerHeight/2, transition: { duration: 0.5, ease: [0.20, 0, 0.13, 1] }} }
+                >
+                  An online gallery showcasing looping animations made with p5.js, a JavaScript library focussed on creative coding. These images use nested loops and math to create soothing, meditative visuals.
+                  <br /><br /><em>2024</em>
+              </motion.div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -159,22 +180,24 @@ function App() {
         className="infoText"
         style={{left: mousePos.x, top: mousePos.y, display: showChess}}
         >
-          <h2>→ Realtime multiplayer chess app developed during the Le Wagon web development bootcamp<em>, 2024</em></h2>
+          <h2>2024</h2>
+
       </div>
 
       <div
         className="infoText"
         style={{left: mousePos.x, top: mousePos.y, display: showBT}}
         >
-          <h2>→ Portfolio website for animation studio<em>, 2024</em></h2>
+          <h2>2024</h2>
       </div>
 
       <div
         className="infoText"
         style={{left: mousePos.x, top: mousePos.y, display: showP5js}}
         >
-          <h2>→ Showcasing images created using p5.js<em>, 2024</em></h2>
+          <h2>2024</h2>
       </div>
+
 
       <div className="contact">
         <a href="https://github.com/btillek" target="_blank" rel="noreferrer">Github</a>
