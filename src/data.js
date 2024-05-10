@@ -12,7 +12,7 @@ export const PROJECTS = [
     video: ChessVid
   },
   {
-    title: "BTSudio",
+    title: "BTStudio",
     project: "btstudio",
     url: "https://btillek.github.io/bt-studio/",
     description: "A portfolio website for animation studio BTStudio, using moving layers to create visual depth, much like the work BTStudio creates.",
